@@ -6,7 +6,6 @@ import { ApolloDriver } from '@nestjs/apollo';
 import { ApolloDriverConfig } from '@nestjs/apollo/dist/interfaces';
 import { CoffeesModule } from './coffees/coffees.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { join } from 'path';
 
 @Module({
   imports: [

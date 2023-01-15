@@ -3,9 +3,9 @@ Coffee model
 """
 type Coffee {
     """
-    An unique identifier
+    An unique identifier 
     """
-    _id:ID!
+    _id:String!
     name:String!
     brand:String!
     flavors:[String!]!
@@ -13,7 +13,7 @@ type Coffee {
 
 type Query{
     coffees: [Coffee!]!
-    coffee(id:ID!):Coffee!
+    coffee(id:String!):Coffee!
 }
 
 input CreateCoffeeInput{
@@ -22,6 +22,14 @@ input CreateCoffeeInput{
     flavors:[String!]!
 }
 
+input updateCoffeeInput{
+    name:String
+    brand:String
+    flavors:[String!]
+}
+
 type Mutation{
     createCoffee(createCoffeeInput: CreateCoffeeInput!):Coffee!
+    updateCoffee(id:String!, updateCoffeeInput:updateCoffeeInput!):Coffee!
+    removeCoffee(id:String!): Coffee!
 }
